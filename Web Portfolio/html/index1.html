@@ -1,417 +1,444 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>웹 포트폴리오</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 - 웹 디자이너 & 개발자</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100..900&family=Montserrat:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        @charset "utf-8";
 
-  <!-- 폰트 및 아이콘 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/pretendard@1.3.6/dist/web/static/pretendard.css" rel="stylesheet">
+        /*reset*/
+        html, body, div, header, span, h1,h2,h3,h4,ul,li, nav,p,span, img, footer, section, article,hr,button,ol,dl,dt,dd{margin:0; padding: 0; box-sizing: border-box;}
+        .hidden{display: none;}
+        ul,li{list-style: none;}
+        a{text-decoration: none; color:inherit;}
+        hr{border: none;}
+        img{max-width: 100%; vertical-align: top; border: 0;}
+        body{ overflow-x: hidden;}
+        .wrap{width:100%; overflow-x: hidden; }
+        button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            background-color: none;
+            text-decoration: none;
+        }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles/HOME_style.css" />
-  
-  <style>
-    /* 기본 스타일 추가 */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Pretendard', sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    /* Header Styles */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      /* background: rgba(255, 255, 255, 0.95); */
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      padding: 1rem 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    header nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      gap: 2rem;
-    }
-    
-    header nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-    
-    header nav a:hover {
-      color: #007bff;
-    }
-    
-    /* Mobile Menu */
-    .mbmenu {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1001;
-    }
-    
-    .mbmenu span {
-      width: 25px;
-      height: 3px;
-      background: #333;
-      margin: 3px 0;
-      transition: 0.3s;
-    }
-    
-    .open_nav {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 1000;
-    }
-    
-    .subnav_menu {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      list-style: none;
-      gap: 2rem;
-    }
-    
-    .subnav_menu a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-    
-    /* Main Content Area */
-    .main-content {
-      min-height: 100vh;
-      padding-top: 80px;
-    }
-    
-    .content-section {
-      padding: 4rem 0;
-      border-bottom: 1px solid #eee;
-    }
-    
-    .content-section:last-child {
-      border-bottom: none;
-    }
-    
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
-      color: #333;
-    }
-    
-    .section-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .section-content h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #007bff;
-    }
-    
-    .section-content p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 12px 30px;
-      background: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-      margin: 0 10px;
-    }
-    
-    .btn:hover {
-      background: #0056b3;
-    }
-    
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #007bff;
-      color: #007bff;
-    }
-    
-    .btn-outline:hover {
-      background: #007bff;
-      color: white;
-    }
-    
-    /* Footer Styles */
-    footer {
-      background: #222;
-      color: white;
-      padding: 3rem 0 1rem;
-      margin-top: 4rem;
-    }
-    
-    .ftinner {
-      text-align: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    footer strong {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-    
-    footer hr {
-      border: none;
-      height: 1px;
-      background: #444;
-      margin: 2rem 0;
-    }
-    
-    footer p {
-      margin-bottom: 2rem;
-      color: #ccc;
-    }
-    
-    .contact_list ul {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      list-style: none;
-    }
-    
-    .contact_list a {
-      color: #ccc;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: color 0.3s ease;
-    }
-    
-    .contact_list a:hover {
-      color: #007bff;
-    }
-    
-    .contact_list i {
-      font-size: 1.2rem;
-    }
-    
-    /* Top Button */
-    .top_btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-    
-    .top_btn a {
-      display: block;
-      width: 50px;
-      height: 50px;
-      background: #007bff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-decoration: none;
-      font-size: 1.5rem;
-      transition: background 0.3s ease;
-    }
-    
-    .top_btn a:hover {
-      background: #0056b3;
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      header nav {
-        display: none;
-      }
-      
-      .mbmenu {
-        display: flex;
-      }
-      
-      .section-title {
-        font-size: 2rem;
-      }
-      
-      .section-content h2 {
-        font-size: 1.5rem;
-      }
-      
-      .contact_list ul {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-  </style>
+        /*body*/
+        body{color:#1b1b1b; background-color: #ffffff; font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;}
+        .main_title, .title>span{ font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;}
+
+        .wrap{width:100%}
+        .inner{width:83.33%; margin: 0 auto;}
+
+        /*header*/ 
+        header{position: fixed;background-color:rgba(255, 255, 255, 0.4); height: 80px; width:100%; -webkit-backdrop-filter: blur(8px); 
+            backdrop-filter: blur(8px); 
+            box-shadow: 0px 0px 10px rgb(134, 134, 134,0.5); z-index: 10; }
+        header nav{height:80px; }
+        header nav > ul{display: flex; justify-content: center; align-items: center; align-content: center; font-size: 1.125rem;; gap:50px; height: 100%; }
+        header nav > ul > li{padding:0 38px; font-weight: 600; position: relative;}
+        header nav ul li a{display: block; height: 100%; line-height: 80px;}
+        header nav ul li:hover a{color:#FF8335}
+        header nav ul li:last-child{margin-right: 0;}
+
+        .mbmenu{width: 38px; height: 30px; position: relative; cursor: pointer; display: none; top:30px; left:20px}
+        .mbmenu >span{ border-radius: 5px; background-color: #1b1b1b; position: absolute; transition: 0.3s; width: 100%; height: 2px; left:0 ;}
+        .mbmenu >span:nth-child(1){top:0}
+        .mbmenu >span:nth-child(2){top:10px}
+        .mbmenu >span:nth-child(3){top:20px}
+
+        .mbmenu.active span:nth-child(1){transform: rotate(45deg); top:9px}
+        .mbmenu.active span:nth-child(2){opacity: 0;}
+        .mbmenu.active span:nth-child(3){transform: rotate(-45deg); top:9px}
+
+        .main_title{width: 100%; text-align: center;}
+        .main_title h4{font-size: 3rem; padding-top: 150px; padding-bottom: 60px;}
+        .title > span{font-size: 32px; font-weight: 700; line-height: 100px; display: block; color:#1b1b1b; padding-top: 40px;}
+
+        /*main_tab*/
+        .main_tab_container{width: 50%; margin: 0 auto;}.main_tab{display: flex;justify-content: space-between; border-radius: 100px; border: 1px solid #d3d3d3;  }
+        .main_tab button{width: 32.7%; height: 50px; border-radius: 100px; border: none; background-color: #fff; font-size: 1.125rem; font-weight: 500; font-family: "Pretendard Variable" ;color:#333}
+        .main_tab button.on{background-color: #FF8335; color:#fff}
+         
+        .button_area{display: flex; gap:10px}
+        .go_btn2{border-radius: 15px; background-color:#ffdcc6; width:90px; height: 30px; display: block;  font-size: 1rem; line-height: 30px; margin-top: 15px; position: relative; padding-left: 10px; color:#ff741e} 
+        .go_btn2 span{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCA1MCAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI1IDEyLjVMMTUgMjJWMTdIMFYxNUgxNVYzTDI1IDEyLjVaIiBmaWxsPSIjRkY3NDFFIi8+CjxwYXRoIGQ9Ik0yNSAxMi41TDM1IDIyVjE3SDUwVjE1SDM1VjNMMjUgMTIuNVoiIGZpbGw9IiNGRkZGRkYiLz4KPC9zdmc+); width:25px; height: 25px; background-position: 25px,0; background-size: 200% 100%; text-indent: -99999px; position: absolute;  right:2px; top:3px}
+        .go_btn2:hover{background-color:#ff741e ; color:#ffffff}
+        .go_btn2:hover span{background-position: 0,0;}
+
+        /*coding*/
+        .coding{padding-top: 100px;}
+        .coding>ul{display: flex; flex-wrap: wrap; justify-content: space-between; gap:50px 0; flex-direction: row;}
+        .coding ul li{width: 28.1%;}
+        .coding ul li .coding_img{ width:100%; border-radius: 20px; overflow: hidden;  }
+        .coding ul li .coding_img > img{transition: all 0.5s; display: block;object-fit: cover; height: 200px; }
+        .coding ul li:hover .coding_img > img{transform: scale(1.1);}
+        .coding ul li .coding_text{padding-top: 20px;}
+        .coding ul li .coding_text strong{font-size: 1.5rem; display: block; font-weight: 600;}
+        .coding ul li .coding_text > span {font-size: 1rem; padding-top: 5px;  display: block;}
+        .coding ul li .coding_text p{padding-top: 8px; color:#5f5f5f}
+        .coding ul li .coding_text p span{font-size: 14px;}
+        .coding ul li .coding_text p span:nth-child(2){padding-left: 5px; color: #5f5f5f;}
+        .coding ul li .coding_text p span:nth-child(3){display: block; padding-top: 5px;}
+        .go_btn{border-radius: 15px; background-color:#ffdcc6; width:80px; height: 30px; display: block;  font-size: 1rem; line-height: 30px; margin-top: 15px; position: relative; padding-left: 15px; color:#ff741e} 
+        .go_btn span{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCA1MCAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI1IDEyLjVMMTUgMjJWMTdIMFYxNUgxNVYzTDI1IDEyLjVaIiBmaWxsPSIjRkY3NDFFIi8+CjxwYXRoIGQ9Ik0yNSAxMi41TDM1IDIyVjE3SDUwVjE1SDM1VjNMMjUgMTIuNVoiIGZpbGw9IiNGRkZGRkYiLz4KPC9zdmc+); width:25px; height: 25px; background-position: 25px,0; background-size: 200% 100%; text-indent: -99999px; position: absolute;  right:5px; top:3px}
+        .go_btn:hover{background-color:#ff741e ; color:#ffffff}
+        .go_btn:hover span{background-position: 0,0;}
+
+        /*design_1*/
+        .design_1{padding-top:100px}
+        .uiux_con{width: 100%; display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center;}
+        .uiux_title_area{position: relative;  width: 35%;}
+        .uiux_img_area{width: 55%; }
+        .uiux_img_area img{width: 100%; object-fit: cover; height: 400px; border-radius: 20px; box-shadow: 0px 0px 2px #999999;}
+        .uiux_title{position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);  text-align: center; width: 100%;}
+        .uiux_title >strong{font-size:2.5rem ;  font-family: "Montserrat", sans-serif;}
+        .uiux_title >p{padding-top: 20px;}
+        .uiux_title > .go_btn{margin: 30px auto; text-align: left; width: 70px;}
+        .uiux_title > .go_btn text{padding: 0 5px;}
+
+        /*design_2*/
+        #project2{ position: relative; width: 100%; height: 100%;}
+        .design_2{padding: 100px 0;}
+        .content_txt>ul{width: 100%;}
+        .content_txt>ul>li{font-size: 1.375rem; line-height: 60px;}
+        .content_txt>ul>li:hover{text-decoration: underline;   text-underline-position: under;
+          text-underline-offset: 0;}
+        .content_txt>ul>li span{font-weight: 500;}
+        .content_design{display: flex; justify-content: space-around; align-items: center;}
+        .content_txt_area{width: 20%;}
+        .content_img_area{width: 70%; }
+        .content_img_area >.list{display: flex; justify-content: center; gap:25px;align-items: center; height: 100%;}
+        .content_img_area >.list>li{width: 70%; box-shadow: 0px 0px 2px #6d6d6d;  border-radius: 10px; overflow: hidden; position: relative; }
+        .content_img_area >.list>li img{width: 100%; object-fit: cover; transition: all 0.7s; height: 300px;}
+        .content_img_area >.list>li:hover img{transform: scale(1.1); transition: all 0.7s;}
+
+        .pop_list{display: flex; width: 100%; justify-content: space-around; gap:35px}
+        .pop{border-radius: 15px; background-color:#ffdcc6; width:80px; height: 30px; display: block;  font-size: 1rem; line-height: 30px; margin-top: 15px; position: relative; padding-left: 10px; color:#ff741e; cursor: pointer;}
+        .pop:hover{background-color:#ff741e ; color:#ffffff}
+
+        /*footer*/
+        footer{width:100%;  padding-top:50px; padding-bottom: 20px;}
+        footer .ftinner{width: 83.33%; margin: 0 auto;}
+        footer hr{padding: 5px; border-bottom: 2px solid rgba(92, 92, 92, 0.4);} 
+        footer .ftinner .contact_list{padding: 30px 0;}
+        footer .ftinner .contact_list ul {display: flex;  align-items: center;}
+        footer .ftinner .contact_list ul li a{color: #333; padding: 10px; font-size: 1rem;}
+        footer .ftinner .contact_list ul li a span{ font-size: 1rem;  font-weight: 500;}
+footer {background: #c7afaf; color: white; padding: 3rem 0 1rem; margin-top: 4rem;}
+footer .ftinner{ margin: 0 auto; width: 83.33%;}
+footer .ftinner strong{font-size: 32px; padding-top: 50px; display: block; ; font-family: "Montserrat", sans-serif;;}
+footer .ftinner hr{padding: 5px; border-bottom: 1px solid rgba(94, 94, 94, 0.4);} 
+footer .ftinner > p{font-size: 1.5rem; padding-top: 20px; color: #575757;}
+footer .ftinner .contact_list{padding-top: 26px; }
+footer .ftinner .contact_list ul{display: flex; gap:30px}
+footer .ftinner .contact_list ul li a{ padding: 10px; font-size: 24px;}
+footer .ftinner .contact_list ul li a span{display: block; font-size: 28px;  padding-top: 8px; font-weight: 500;}
+
+        /*top_btn*/
+        .top_btn > a{width: 50px; height: 50px; right: 50px;
+            bottom: 70px; z-index: 999; border-radius: 100%;
+            position: fixed; opacity: 0.8; box-shadow: 0px 0px 4px #6d6d6d; display: none;}
+
+        /*subnav*/
+        .open_nav{background-color: #fff; position: fixed; top:0; left:-100%; width: 100%; height: 100%; z-index: 9; transition: left 0.5s ease-in-out; visibility: hidden;  }
+        .open_nav.active{left:0%; visibility: visible;}
+        .subnav_menu{font-size: 2rem; font-weight: 700; display: flex; flex-flow:column; flex-grow: 1; top:30%; left:50%; transform: translate(-50%,-50%); position: absolute; text-align: center; padding-top: 120px;}
+        .subnav_menu li{line-height: 80px; cursor: pointer;}
+        .subnav_menu li:hover{color: #FF8335;}
+
+        .popup {
+          margin: 20px 0;
+          width: 65%;
+          height: 700px;
+          margin: 0 auto;
+          background-color: #fff;
+          z-index: 99999;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          overflow-y: auto;
+          border-radius: 10px;
+          box-shadow: 0px 0px 4px #5f5f5f;
+          display: none;
+        }
+
+        .popcon {
+          display: flex;
+          padding: 20px 0;
+        }
+
+        .pop_text {
+          width: 50%;
+          padding: 30px 10px;
+          position: sticky;
+          top: 0;
+          align-self: flex-start;
+          background-color: #fff;
+          height: fit-content;
+          z-index: 1;
+        }
+        .pop_text button{width: 40px; background-color: #fff; float: right; }
+        .pop_text strong {
+          font-size: 1.5rem;
+        }
+        .pop_text .pop_maintxt{display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: center;}
+        .pop_text>hr{border-bottom: 1px solid #a0a0a0; padding-top: 5px;}
+        .pop_text > ol > li{line-height: 40px; font-size: 1.125rem; padding-top: 20px;}
+        .pop_text > ol > li dt{font-weight: 700;}
+        .pop_text > ol > li dd{font-size: 1rem; font-weight: 400;}
+        .pop_img {
+          width: 50%;
+          padding: 20px 10px;
+        }
+        .pop_img img {
+          width: 100%;
+          margin-bottom: 10px;
+          border-radius: 10px;
+        }
+
+        .br{display: none;}
+
+        /* 반응형 디자인 */
+        @media screen and (max-width:1280px) {
+          .main_tab_container{width: 100%; margin: 0 auto;}
+          .uiux_title >strong{font-size:2rem ;  font-family: "Montserrat", sans-serif;}
+          .coding ul li {width: 48%;}
+          .coding ul li .coding_text strong {
+            font-size: 1.375rem;
+          }
+          .coding ul li .coding_text > span {
+            font-size: 0.875rem;
+          }
+          .main_tab button {
+            width: 280px;
+            font-size: 0.875rem;
+            padding: 10px 0;
+          }
+          .popup {
+            width: 80%;
+            height: 600px;
+          }
+        }
+
+        @media screen and (max-width:768px) {
+            .inner{width: 90%; margin: 0 auto;}
+            header{display: none;}
+            nav{display: none;}
+            .mbmenu{display: block; z-index: 9999; }
+            .main_tab{display: flex;  width: 100%; height: 45px; justify-content: space-between; border-radius: 60px; border: 1px solid #d3d3d3; font-family:  "Pretendard Variable"; }
+            .main_tab button{width: 180px; height:100%; font-size: 0.875rem; padding: 10px 0; }
+            .main_title h4{font-size: 3rem; padding-top: 100px; padding-bottom: 60px;}
+            
+            .br{display: block;}
+            
+            .coding{padding-top: 0;}
+            .coding>ul{flex-direction: column; justify-content: center; gap:0px}
+            .coding ul li{width: 100%; padding: 30px 0;}
+            .coding ul li .coding_text{padding-left: 10px;}
+            .coding ul li .coding_text strong{font-size: 1.5rem; font-weight: 700;}
+            .coding ul li .coding_text > span {font-size: 1rem; padding-top: 5px; font-weight: 400;}
+            .coding ul li .coding_text p{padding-top: 8px; color:#303030}
+
+            .design_1{padding: 30px 0 0 0;}
+            .design_2{padding: 0px;}
+            .uiux_con{flex-direction: column-reverse;}
+            .uiux_title_area{width: 100%; padding: 50px 0;}
+            .uiux_img_area{width: 100%;}
+            .uiux_title{width: 100%; position: relative; transform: none; top: auto; left: auto;}
+            .uiux_title >strong{font-size:1.5rem;}
+            .uiux_title >p{padding-top: 5px;}
+            .uiux_title > .go_btn{margin: 20px auto;}
+
+            .content_txt>ul{padding: 0px; width: 100%; display: flex; justify-content: center; gap:20px; margin-bottom: 30px;} 
+            .content_txt>ul>li{font-size: 1.125rem; line-height: 60px;}
+            .content_txt>ul>li span{font-weight: 600;}
+            .content_design{flex-direction: column;}
+            .content_txt_area{width: 100%;}
+            .content_img_area{width: 100%; padding: 0;}
+            .content_img_area >.list{gap:20px;}
+            .content_img_area >.list >li{width: 100%;}
+
+            footer .ftinner .contact_list ul {flex-direction: column;}
+            footer .ftinner .contact_list ul li{line-height: 30px;}
+
+            .open_nav{width: 100%; visibility: visible;}
+
+            .popup {
+              width: 90%;
+              height: 500px;
+            }
+            .pop_text {
+              width: 50%;
+              padding: 10px 5px;
+            }
+            .pop_img {
+              width: 50%;
+              padding: 10px 5px;
+            }
+            .pop_text strong {
+              font-size: 1rem;
+            }
+            .pop_text > ol > li{line-height: 30px; font-size: 1rem; padding-top: 20px;}
+            .pop_text > ol li dt{font-weight: 600;}
+            .pop_text > ol li dd{font-size: 0.875rem;}
+        }
+    </style>
 </head>
 <body>
+    <div class="wrap">
+        <!-- 헤더 -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#coding">CODING</a></li>
+                    <li><a href="#design">DESIGN</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
 
-<!-- =========================== HEADER START =========================== -->
-<!-- 모바일 메뉴 -->
-<div class="mbmenu" onclick="toggleMobileMenu()">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
-<div class="open_nav" id="mobileNav">
-  <ul class="subnav_menu">
-    <li><a href="#main" onclick="closeMobileMenu()">HOME</a></li>
-    <li><a href="#about" onclick="closeMobileMenu()">ABOUT</a></li>
-    <li><a href="#skill" onclick="closeMobileMenu()">SKILL</a></li>
-    <li><a href="#coding" onclick="closeMobileMenu()">CODING</a></li>
-    <li><a href="#design" onclick="closeMobileMenu()">DESIGN</a></li>
-  </ul>
-</div>
-
-<!-- 헤더 -->
-<header>
-  <nav>
-    <ul>
-      <li><a href="#main">HOME</a></li>
-      <li><a href="#about">ABOUT</a></li>
-      <li><a href="#skill">SKILL</a></li>
-      <li><a href="#coding">CODING</a></li>
-      <li><a href="#design">DESIGN</a></li>
-    </ul>
-  </nav>
-</header>
-<!-- =========================== HEADER END =========================== -->
-
-<!-- =========================== MAIN CONTENT START =========================== -->
-<main class="main-content">
-  
-  <!-- 여기에 새로운 섹션들을 추가하세요 -->
-  
-  <section id="main" class="content-section">
-    <div class="container">
-      <div class="section-content">
-        <h1 class="section-title">Hi, I'm <span style="color: #007bff;">Lee-kyung-min</span></h1>
-        <p>법률사무원 & 프론트엔드 개발자 & 웹디자이너 포트폴리오</p>
-        <div style="margin-top: 2rem;">
-          <a href="#about" class="btn">더 알아보기</a>
-          <a href="#coding" class="btn btn-outline">작업 보기</a>
+        <!-- 모바일 메뉴 -->
+        <div class="mbmenu" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="about" class="content-section">
-    <div class="container">
-      <div class="section-content">
-        <h2>About Me</h2>
-        <p><strong>Name : 이경민</strong></p>
-        <p>웹디자인과 프론트엔드 개발 및 법률사무원을 함께하는 크리에이터입니다.</p>
-        <p>
-          📍 서울시 노원구 거주<br>
-          🖥 lkm4175@naver.com<br>
-          📞 010-4559-4175
-        </p>
-        <div style="margin-top: 2rem;">
-          <a href="/html/cover letter.html" class="btn">자기소개서</a>
-          <a href="/html/rltnfrudfurtj.html" class="btn">기술경력서</a>
-          <a href="html/이경민_이력서.pdf" download class="btn btn-outline">📄 이력서 PDF 다운로드</a>
+        <!-- 모바일 서브 네비게이션 -->
+        <div class="open_nav" id="mobileNav">
+            <ul class="subnav_menu">
+                <li onclick="scrollToSection('home')">HOME</li>
+                <li onclick="scrollToSection('coding')">CODING</li>
+                <li onclick="scrollToSection('design')">DESIGN</li>
+                <li onclick="scrollToSection('contact')">CONTACT</li>
+            </ul>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="skill" class="content-section">
-    <div class="container">
-      <div class="section-content">
-        <h2>Skills</h2>
-        <p>HTML5, CSS3, JavaScript, Bootstrap, jQuery, Figma, Photoshop, Illustrator 등을 활용한 웹 개발 및 디자인 작업을 수행합니다.</p>
-      </div>
-    </div>
-  </section>
+        <!-- 메인 타이틀 -->
+        <section id="home" class="main_title">
+            <h4>PORTFOLIO</h4>
+            <div class="main_tab_container">
+                <div class="main_tab">
+                    <button class="tab-btn on" onclick="showTab('coding')">CODING</button>
+                    <button class="tab-btn" onclick="showTab('design')">DESIGN</button>
+                    <button class="tab-btn" onclick="showTab('contact')">CONTACT</button>
+                </div>
+            </div>
+        </section>
 
-  <section id="coding" class="content-section">
-    <div class="container">
-      <div class="section-content">
-        <h2>Coding Works</h2>
-        <p>다양한 웹 프로젝트를 통해 사용자 경험을 개선하고 실용적인 솔루션을 제공합니다.</p>
-        <div style="margin-top: 2rem;">
-          <a href="tpantk1.html" class="btn">세무사 1차 프로젝트 보기</a>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- 코딩 섹션 -->
+        <section id="coding" class="coding">
+            <div class="inner">
+                <div class="title">
+                    <span>Web Development</span>
+                </div>
+                <ul>
+                    <li>
+                        <div class="coding_img">
+                            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=300&fit=crop" alt="웹사이트 프로젝트 1">
+                        </div>
+                        <div class="coding_text">
+                            <strong>E-commerce Website</strong>
+                            <span>React, Node.js, MongoDB</span>
+                            <p>
+                                <span>2024.03</span>
+                                <span>개인 프로젝트</span>
+                                <span>반응형 온라인 쇼핑몰 구축</span>
+                            </p>
+                            <button class="go_btn" onclick="openPopup('project1')">
+                                보기<span>arrow</span>
+                            </button>
+                        </div>
+                    </li>
 
-  <section id="design" class="content-section">
-    <div class="container">
-      <div class="section-content">
-        <h2>Design Works</h2>
-        <p>UI/UX 디자인과 브랜딩 작업을 통해 사용자 중심의 디자인 솔루션을 제공합니다.</p>
-        <div style="margin-top: 2rem;">
-          <a href="bigcase.html" class="btn">빅케이스 리디자인</a>
-          <a href="lawform.html" class="btn">로폼 리디자인</a>
-          <a href="lbox.html" class="btn">LBOX 리디자인</a>
-        </div>
-      </div>
-    </div>
-  </section>
+                    <!-- 섹션 추가 -->
+                    <!-- <li>
+                        <div class="coding_img">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=300&fit=crop" alt="웹사이트 프로젝트 2">
+                        </div>
+                        <div class="coding_text">
+                            <strong>Dashboard System</strong>
+                            <span>Vue.js, Express.js, MySQL</span>
+                            <p>
+                                <span>2024.01</span>
+                                <span>팀 프로젝트</span>
+                                <span>데이터 시각화 대시보드</span>
+                            </p>
+                            <button class="go_btn" onclick="openPopup('project2')">
+                                보기<span>arrow</span>
+                            </button>
+                        </div>
+                    </li> -->
 
-  <!-- 
-  ========================================
-  여기에 새로운 섹션을 추가하세요!
-  ========================================
-  
-  예시:
-  <section id="new-section" class="content-section">
-    <div class="container">
-      <div class="section-content">
-        <h2>새로운 섹션 제목</h2>
-        <p>새로운 내용을 여기에 추가하세요.</p>
-      </div>
-    </div>
-  </section>
-  -->
 
-</main>
-<!-- =========================== MAIN CONTENT END =========================== -->
+                </ul>
+            </div>
+        </section>
 
-<!-- =========================== FOOTER START =========================== -->
+        <!-- 디자인 섹션 1 -->
+        <section id="design" class="design_1">
+            <div class="inner">
+                <div class="uiux_con">
+                    <div class="uiux_title_area">
+                        <div class="uiux_title">
+                            <strong>UI/UX<br>DESIGN</strong>
+                            <p>사용자 중심의 직관적인 인터페이스를 디자인합니다.</p>
+                            <button class="go_btn">
+                                보기<span>arrow</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="uiux_img_area">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop" alt="UI/UX 디자인">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 디자인 섹션 2 -->
+        <section class="design_2">
+            <div class="inner">
+                <div class="content_design">
+                    <div class="content_txt_area">
+                        <div class="content_txt">
+                            <ul>
+                                <li><span>Mobile App</span></li>
+                                <li><span>Web Design</span></li>
+                                <li><span>Brand Identity</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content_img_area">
+                        <ul class="list">
+                            <li>
+                                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop" alt="모바일 앱 디자인">
+                            </li>
+                            <li>
+                                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop" alt="웹 디자인">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_list">
+                    <button class="pop" onclick="openPopup('design1')">Mobile</button>
+                    <button class="pop" onclick="openPopup('design2')">Web</button>
+                    <button class="pop" onclick="openPopup('design3')">Brand</button>
+                </div>
+            </div>
+        </section>
+
+<!-- Footer -->
 <footer>
   <div class="ftinner">
     <strong>Name : 이경민</strong>
@@ -419,55 +446,299 @@
     <p>© 2025 웹 포트폴리오. All Rights Reserved.</p>
     <div class="contact_list">
       <ul>
-        <li><a href="#"><i class="fab fa-github"></i><span>GitHub</span></a></li>
+        <li><a href="https://github.com/rudals-lee"><i class="fab fa-github"></i><span>GitHub<br> 
+          https://github.com/rudals-lee
+        </span></a></li>
         <li><a href="#"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
       </ul>
     </div>
   </div>
 </footer>
 
-<!-- Top Button -->
-<div class="top_btn">
-  <a href="#main">↑</a>
-</div>
-<!-- =========================== FOOTER END =========================== -->
+        <!-- 팝업 -->
+        <div class="popup" id="popup">
+            <div class="popcon">
+                <div class="pop_text">
+                    <div class="pop_maintxt">
+                        <strong id="popupTitle">프로젝트 제목</strong>
+                        <button onclick="closePopup()">✕</button>
+                    </div>
+                    <hr>
+                    <ol id="popupContent">
+                        <!-- 팝업 내용이 여기에 동적으로 추가됩니다 -->
+                    </ol>
+                </div>
+                <div class="pop_img" id="popupImages">
+                    <!-- 팝업 이미지들이 여기에 동적으로 추가됩니다 -->
+                </div>
+            </div>
+        </div>
 
-<script>
-// 모바일 메뉴 토글
-function toggleMobileMenu() {
-  const nav = document.getElementById('mobileNav');
-  nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-}
+        <!-- 맨 위로 버튼 -->
+        <div class="top_btn">
+            <a href="#home" onclick="scrollToTop()">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiIGZpbGw9IiNGRjgzMzUiLz4KPHBhdGggZD0iTTI1IDE1TDE1IDI1SDIwVjM1SDMwVjI1SDM1TDI1IDE1WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+" alt="Top">
+            </a>
+        </div>
+    </div>
 
-// 모바일 메뉴 닫기
-function closeMobileMenu() {
-  document.getElementById('mobileNav').style.display = 'none';
-}
+    <script>
+        // 팝업 데이터
+        const popupData = {
+            project1: {
+                title: "E-commerce Website",
+                content: [
+                    { dt: "프로젝트 개요", dd: "React와 Node.js를 사용한 반응형 온라인 쇼핑몰 구축" },
+                    { dt: "주요 기능", dd: "상품 관리, 장바구니, 결제 시스템, 사용자 관리" },
+                    { dt: "사용 기술", dd: "React, Node.js, MongoDB, Express.js, JWT" },
+                    { dt: "개발 기간", dd: "2024.03 - 2024.05 (2개월)" },
+                    { dt: "프로젝트 특징", dd: "반응형 디자인, RESTful API, 실시간 재고 관리" }
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
+                    "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop",
+                    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop"
+                ]
+            },
+            project2: {
+                title: "Dashboard System",
+                content: [
+                    { dt: "프로젝트 개요", dd: "Vue.js 기반 데이터 시각화 대시보드 시스템" },
+                    { dt: "주요 기능", dd: "실시간 데이터 모니터링, 차트 생성, 리포트 생성" },
+                    { dt: "사용 기술", dd: "Vue.js, Express.js, MySQL, Chart.js, Socket.io" },
+                    { dt: "개발 기간", dd: "2024.01 - 2024.02 (2개월)" },
+                    { dt: "프로젝트 특징", dd: "실시간 업데이트, 다양한 차트 타입, 사용자 권한 관리" }
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
+                    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
+                ]
+            },
+            project3: {
+                title: "Blog Platform",
+                content: [
+                    { dt: "프로젝트 개요", dd: "Next.js 기반 개인 블로그 플랫폼" },
+                    { dt: "주요 기능", dd: "마크다운 에디터, 댓글 시스템, 태그 관리, SEO 최적화" },
+                    { dt: "사용 기술", dd: "Next.js, Prisma, PostgreSQL, Tailwind CSS" },
+                    { dt: "개발 기간", dd: "2023.12 - 2024.01 (1개월)" },
+                    { dt: "프로젝트 특징", dd: "SSG/SSR 최적화, 다크모드 지원, 모바일 최적화" }
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=300&fit=crop",
+                    "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop",
+                    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
+                ]
+            },
+            design1: {
+                title: "Mobile App Design",
+                content: [
+                    { dt: "프로젝트 개요", dd: "iOS/Android 모바일 앱 UI/UX 디자인" },
+                    { dt: "디자인 컨셉", dd: "미니멀하고 직관적인 사용자 인터페이스" },
+                    { dt: "사용 도구", dd: "Figma, Adobe XD, Principle" },
+                    { dt: "작업 기간", dd: "2024.02 - 2024.03 (1개월)" },
+                    { dt: "프로젝트 특징", dd: "사용자 경험 최적화, 일관된 디자인 시스템" }
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+                    "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop",
+                    "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=400&h=300&fit=crop"
+                ]
+            },
+            design2: {
+                title: "Web Design",
+                content: [
+                    { dt: "프로젝트 개요", dd: "기업 웹사이트 리브랜딩 및 디자인" },
+                    { dt: "디자인 컨셉", dd: "모던하고 전문적인 기업 이미지" },
+                    { dt: "사용 도구", dd: "Adobe Photoshop, Illustrator, Figma" },
+                    { dt: "작업 기간", dd: "2024.01 - 2024.02 (1개월)" },
+                    { dt: "프로젝트 특징", dd: "반응형 디자인, 브랜드 아이덴티티 반영" }
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop",
+                    "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop",
+                    "https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&h=300&fit=crop"
+                ]
+            },
+            design3: {
+                title: "Brand Identity",
+                content: [
+                    { dt: "프로젝트 개요", dd: "스타트업 브랜드 아이덴티티 디자인" },
+                    { dt: "디자인 컨셉", dd: "창의적이고 혁신적인 브랜드 이미지" },
+                    { dt: "사용 도구", dd: "Adobe Illustrator, Photoshop, InDesign" },
+                    { dt: "작업 기간", dd: "2023.12 - 2024.01 (1개월)" },
+                    { dt: "프로젝트 특징", dd: "로고 디자인, 컬러 시스템, 타이포그래피" }
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
+                    "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=400&h=300&fit=crop",
+                    "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop"
+                ]
+            }
+        };
 
-// 부드러운 스크롤
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
+        // 탭 전환 함수
+        function showTab(tabName) {
+            // 모든 탭 버튼에서 on 클래스 제거
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('on');
+            });
+            
+            // 클릭된 탭에 on 클래스 추가
+            event.target.classList.add('on');
+            
+            // 해당 섹션으로 스크롤
+            scrollToSection(tabName);
+        }
 
-// 스크롤 시 헤더 효과
-window.addEventListener('scroll', function() {
-  const header = document.querySelector('header');
-  if (window.scrollY > 100) {
-    header.style.background = 'rgba(255, 255, 255, 0.98)';
-  } else {
-    header.style.background = 'rgba(255, 255, 255, 0.95)';
-  }
-});
-</script>
+        // 섹션으로 스크롤하는 함수
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // 모바일 메뉴가 열려있으면 닫기
+            closeMobileMenu();
+        }
 
+        // 모바일 메뉴 토글
+        function toggleMobileMenu() {
+            const mbmenu = document.querySelector('.mbmenu');
+            const mobileNav = document.getElementById('mobileNav');
+            
+            mbmenu.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        }
+
+        // 모바일 메뉴 닫기
+        function closeMobileMenu() {
+            const mbmenu = document.querySelector('.mbmenu');
+            const mobileNav = document.getElementById('mobileNav');
+            
+            mbmenu.classList.remove('active');
+            mobileNav.classList.remove('active');
+        }
+
+        // 팝업 열기
+        function openPopup(projectId) {
+            const popup = document.getElementById('popup');
+            const popupTitle = document.getElementById('popupTitle');
+            const popupContent = document.getElementById('popupContent');
+            const popupImages = document.getElementById('popupImages');
+            
+            const data = popupData[projectId];
+            
+            if (data) {
+                popupTitle.textContent = data.title;
+                
+                // 내용 추가
+                popupContent.innerHTML = '';
+                data.content.forEach(item => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<dt>${item.dt}</dt><dd>${item.dd}</dd>`;
+                    popupContent.appendChild(li);
+                });
+                
+                // 이미지 추가
+                popupImages.innerHTML = '';
+                data.images.forEach(imgSrc => {
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = data.title;
+                    popupImages.appendChild(img);
+                });
+                
+                popup.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // 팝업 닫기
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // 맨 위로 스크롤
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 스크롤 이벤트 리스너 (맨 위로 버튼 표시/숨김)
+        window.addEventListener('scroll', function() {
+            const topBtn = document.querySelector('.top_btn a');
+            if (window.pageYOffset > 300) {
+                topBtn.style.display = 'block';
+            } else {
+                topBtn.style.display = 'none';
+            }
+        });
+
+        // 팝업 외부 클릭 시 닫기
+        document.getElementById('popup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // ESC 키로 팝업 닫기
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopup();
+                closeMobileMenu();
+            }
+        });
+
+        // 네비게이션 메뉴 클릭 이벤트
+        document.querySelectorAll('header nav ul li a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            // 스크롤 시 헤더 스타일 변경
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                } else {
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+                }
+            });
+
+            // 스크롤 시 현재 섹션에 따른 탭 활성화
+            window.addEventListener('scroll', function() {
+                const sections = ['home', 'coding', 'design', 'contact'];
+                const scrollPos = window.scrollY + 100;
+                
+                sections.forEach(sectionId => {
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.offsetHeight;
+                        
+                        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                            // 모든 탭 버튼에서 on 클래스 제거
+                            document.querySelectorAll('.tab-btn').forEach(btn => {
+                                btn.classList.remove('on');
+                            });
+                            
+                            // 해당 섹션의 탭 버튼에 on 클래스 추가
+                            const targetBtn = document.querySelector(`button[onclick="showTab('${sectionId}')"]`);
+                            if (targetBtn) {
+                                targetBtn.classList.add('on');
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
