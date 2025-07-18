@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>웹 포트폴리오</title>
+
+  <!-- 폰트 및 아이콘 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@1.3.6/dist/web/static/pretendard.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/HOME_style.css" />
+  
+  <style>
+    /* 기본 스타일 추가 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Pretendard', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      /* background: rgba(255, 255, 255, 0.95); */
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    header nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    header nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    
+    header nav a:hover {
+      color: #007bff;
+    }
+    
+    /* Mobile Menu */
+    .mbmenu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1001;
+    }
+    
+    .mbmenu span {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+    
+    .open_nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+    }
+    
+    .subnav_menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    .subnav_menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    /* Main Content Area */
+    .main-content {
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+    
+    .content-section {
+      padding: 4rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .content-section:last-child {
+      border-bottom: none;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #333;
+    }
+    
+    .section-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .section-content h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #007bff;
+    }
+    
+    .section-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+      margin: 0 10px;
+    }
+    
+    .btn:hover {
+      background: #0056b3;
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #007bff;
+      color: #007bff;
+    }
+    
+    .btn-outline:hover {
+      background: #007bff;
+      color: white;
+    }
+    
+    /* Footer Styles */
+    footer {
+      background: #222;
+      color: white;
+      padding: 3rem 0 1rem;
+      margin-top: 4rem;
+    }
+    
+    .ftinner {
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    footer strong {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    footer hr {
+      border: none;
+      height: 1px;
+      background: #444;
+      margin: 2rem 0;
+    }
+    
+    footer p {
+      margin-bottom: 2rem;
+      color: #ccc;
+    }
+    
+    .contact_list ul {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .contact_list a {
+      color: #ccc;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    .contact_list a:hover {
+      color: #007bff;
+    }
+    
+    .contact_list i {
+      font-size: 1.2rem;
+    }
+    
+    /* Top Button */
+    .top_btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .top_btn a {
+      display: block;
+      width: 50px;
+      height: 50px;
+      background: #007bff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: background 0.3s ease;
+    }
+    
+    .top_btn a:hover {
+      background: #0056b3;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      header nav {
+        display: none;
+      }
+      
+      .mbmenu {
+        display: flex;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .section-content h2 {
+        font-size: 1.5rem;
+      }
+      
+      .contact_list ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- =========================== HEADER START =========================== -->
+<!-- 모바일 메뉴 -->
+<div class="mbmenu" onclick="toggleMobileMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="open_nav" id="mobileNav">
+  <ul class="subnav_menu">
+    <li><a href="#main" onclick="closeMobileMenu()">HOME</a></li>
+    <li><a href="#about" onclick="closeMobileMenu()">ABOUT</a></li>
+    <li><a href="#skill" onclick="closeMobileMenu()">SKILL</a></li>
+    <li><a href="#coding" onclick="closeMobileMenu()">CODING</a></li>
+    <li><a href="#design" onclick="closeMobileMenu()">DESIGN</a></li>
+  </ul>
+</div>
+
+<!-- 헤더 -->
+<header>
+  <nav>
+    <ul>
+      <li><a href="#main">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#skill">SKILL</a></li>
+      <li><a href="#coding">CODING</a></li>
+      <li><a href="#design">DESIGN</a></li>
+    </ul>
+  </nav>
+</header>
+<!-- =========================== HEADER END =========================== -->
+
+<!-- =========================== MAIN CONTENT START =========================== -->
+<main class="main-content">
+  
+  <!-- 여기에 새로운 섹션들을 추가하세요 -->
+  
+  <section id="main" class="content-section">
+    <div class="container">
+      <div class="section-content">
+        <h1 class="section-title">Hi, I'm <span style="color: #007bff;">Lee-kyung-min</span></h1>
+        <p>법률사무원 & 프론트엔드 개발자 & 웹디자이너 포트폴리오</p>
+        <div style="margin-top: 2rem;">
+          <a href="#about" class="btn">더 알아보기</a>
+          <a href="#coding" class="btn btn-outline">작업 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="content-section">
+    <div class="container">
+      <div class="section-content">
+        <h2>About Me</h2>
+        <p><strong>Name : 이경민</strong></p>
+        <p>웹디자인과 프론트엔드 개발 및 법률사무원을 함께하는 크리에이터입니다.</p>
+        <p>
+          📍 서울시 노원구 거주<br>
+          🖥 lkm4175@naver.com<br>
+          📞 010-4559-4175
+        </p>
+        <div style="margin-top: 2rem;">
+          <a href="/html/cover letter.html" class="btn">자기소개서</a>
+          <a href="/html/rltnfrudfurtj.html" class="btn">기술경력서</a>
+          <a href="html/이경민_이력서.pdf" download class="btn btn-outline">📄 이력서 PDF 다운로드</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skill" class="content-section">
+    <div class="container">
+      <div class="section-content">
+        <h2>Skills</h2>
+        <p>HTML5, CSS3, JavaScript, Bootstrap, jQuery, Figma, Photoshop, Illustrator 등을 활용한 웹 개발 및 디자인 작업을 수행합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="coding" class="content-section">
+    <div class="container">
+      <div class="section-content">
+        <h2>Coding Works</h2>
+        <p>다양한 웹 프로젝트를 통해 사용자 경험을 개선하고 실용적인 솔루션을 제공합니다.</p>
+        <div style="margin-top: 2rem;">
+          <a href="tpantk1.html" class="btn">세무사 1차 프로젝트 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="design" class="content-section">
+    <div class="container">
+      <div class="section-content">
+        <h2>Design Works</h2>
+        <p>UI/UX 디자인과 브랜딩 작업을 통해 사용자 중심의 디자인 솔루션을 제공합니다.</p>
+        <div style="margin-top: 2rem;">
+          <a href="bigcase.html" class="btn">빅케이스 리디자인</a>
+          <a href="lawform.html" class="btn">로폼 리디자인</a>
+          <a href="lbox.html" class="btn">LBOX 리디자인</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+  ========================================
+  여기에 새로운 섹션을 추가하세요!
+  ========================================
+  
+  예시:
+  <section id="new-section" class="content-section">
+    <div class="container">
+      <div class="section-content">
+        <h2>새로운 섹션 제목</h2>
+        <p>새로운 내용을 여기에 추가하세요.</p>
+      </div>
+    </div>
+  </section>
+  -->
+
+</main>
+<!-- =========================== MAIN CONTENT END =========================== -->
+
+<!-- =========================== FOOTER START =========================== -->
+<footer>
+  <div class="ftinner">
+    <strong>Name : 이경민</strong>
+    <hr>
+    <p>© 2025 웹 포트폴리오. All Rights Reserved.</p>
+    <div class="contact_list">
+      <ul>
+        <li><a href="#"><i class="fab fa-github"></i><span>GitHub</span></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Top Button -->
+<div class="top_btn">
+  <a href="#main">↑</a>
+</div>
+<!-- =========================== FOOTER END =========================== -->
+
+<script>
+// 모바일 메뉴 토글
+function toggleMobileMenu() {
+  const nav = document.getElementById('mobileNav');
+  nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+}
+
+// 모바일 메뉴 닫기
+function closeMobileMenu() {
+  document.getElementById('mobileNav').style.display = 'none';
+}
+
+// 부드러운 스크롤
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// 스크롤 시 헤더 효과
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  if (window.scrollY > 100) {
+    header.style.background = 'rgba(255, 255, 255, 0.98)';
+  } else {
+    header.style.background = 'rgba(255, 255, 255, 0.95)';
+  }
+});
+</script>
+
+</body>
+</html>
