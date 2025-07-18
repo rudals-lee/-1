@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>세무사 시험</title>
+  <link rel="stylesheet" href="styles/세무사.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <!-- 헤더 -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#home">홈</a></li>
+          <li><a href="#project">프로젝트</a></li>
+          <li><a href="#contact">연락처</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- 모바일 메뉴 버튼 -->
+    <div class="mbmenu" id="mbmenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- 모바일 네비게이션 -->
+    <div class="open_nav" id="openNav">
+      <ul class="subnav_menu">
+        <li><a href="#home">홈</a></li>
+        <li><a href="#project">프로젝트</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+    </div>
+
+    <!-- 메인 타이틀 -->
+    <section class="main_title">
+      <h4>My Portfolio</h4>
+    </section>
+
+    <!-- 탭 버튼 -->
+    <section class="main_tab_container">
+      <div class="main_tab">
+        <button class="on">재정학</button>
+        <button>세법학개론</button>
+        <button>회계학개론</button>
+        <button>선택과목</button>
+      </div>
+    </section>
+
+    <!-- 코딩 섹션 -->
+    <section class="coding">
+      <ul>
+        <li>
+          <div class="coding_img">
+            <img src="https://via.placeholder.com/400x250" alt="재정학">
+          </div>
+          <div class="coding_text">
+            <strong>재정학</strong>
+            <span>세무사 1차 1교시 재정학 시험</span>
+            <p>
+              <span>1. 사회 후생의 개념 및 효율성과의 관계</span><br>
+              <span>2. 사회 후생 함수의 종류 및 특징</span>
+              <span>3. 조세 정책 및 외부성과 사회 후생</span><br>
+              <SPan>4. 기타 관련 개념</SPan>
+            </p>
+            <a href="#" class="go_btn2" onclick="openPopup()">
+              자세히 보기
+              <span>→</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+<section class="coding">
+      <ul>
+        <li>
+          <div class="coding_img">
+            <img src="https://via.placeholder.com/400x250" alt="세법">
+          </div>
+          <div class="coding_text">
+            <strong>세법학개론</strong>
+            <span>세무사 1차 1교시 세법학개론 시험</span>
+            <p>
+              <span>1. 국제기본법</span><br>
+              <span>2. 국세징수법</span>
+              <span>3. 조세범처벌법</span><br>
+              <SPan>4. 소득세법</SPan><br>
+              <SPan>5. 법인세법</SPan><br>
+              <SPan>6. 부가가치세법</SPan>
+              <SPan>7. 국가조세조정에 관한 법률</SPan>
+            </p>
+            <a href="#" class="go_btn2" onclick="openPopup()">
+              자세히 보기
+              <span>→</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 팝업 -->
+    <div class="popup" id="popup">
+      <div class="popcon">
+        <div class="pop_text">
+          <div class="pop_maintxt">
+            <strong>프로젝트 상세 정보</strong>
+            <button class="close" onclick="closePopup()">✕</button>
+          </div>
+          <hr>
+          <ol>
+            <li>
+              <dt>제작 목적</dt>
+              <dd>반응형 UI/UX 실습</dd>
+            </li>
+            <li>
+              <dt>사용 기술</dt>
+              <dd>HTML5, CSS3, JavaScript</dd>
+            </li>
+            <li>
+              <dt>성과</dt>
+              <dd>실제 사용자 피드백 반영</dd>
+            </li>
+          </ol>
+        </div>
+        <div class="pop_img">
+          <img src="https://via.placeholder.com/300x400" alt="상세 이미지">
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- 푸터 -->
+    <footer>
+      <div class="ftinner">
+        <hr>
+        <div class="contact_list">
+          <ul>
+            <li><a href="mailto:your@email.com"><span>lkm4175@naver.com</span></a></li>
+            <li><a href="#"><span>© 2025 이경민</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/세무사.js"></script>
+</body>
+</html>

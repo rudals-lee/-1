@@ -1,0 +1,61 @@
+
+ body {
+      font-family: 'Noto Sans KR', sans-serif;
+      line-height: 1.7;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      color: #003366;
+      margin-top: 2em;
+    }
+
+    h1 {
+      border-bottom: 2px solid #003366;
+      padding-bottom: 0.5em;
+    }
+
+    ul {
+      margin-left: 20px;
+      padding-left: 10px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: #d10000;
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        color: black;
+        padding: 0;
+      }
+
+      h1, h2, h3 {
+        color: black;
+      }
+
+      a::after {
+        content: " (" attr(href) ")";
+      }
+    }
+
+    /* Optional: Boxed layout for each section */
+    section {
+      background: #ffffff;
+      border: 1px solid #ccc;
+      border-left: 5px solid #003366;
+      padding: 20px;
+      margin-top: 2em;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+    }
+    
+     

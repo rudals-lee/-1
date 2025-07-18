@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이경민 포트폴리오</title>
+  <link rel="stylesheet" href="styles/about me.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- 상단 헤더 -->
+    <header>
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#life">Life</a></li>
+            <li><a href="#strength">Strength</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 모바일 메뉴 -->
+    <div class="mbmenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="open_nav">
+      <ul class="subnav_menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#life">Life</a></li>
+        <li><a href="#strength">Strength</a></li>
+      </ul>
+    </div>
+
+    <!-- About Me -->
+    <section class="aboutme" id="about">
+      <div class="container">
+        <div class="title"><span>ABOUT ME</span></div>
+        <div class="profile_container">
+          <div class="profile_img">
+            <img src="images/profile.jpg" alt="프로필 사진">
+          </div>
+          <div class="profile">
+            <ul>
+              <li>
+                <span>이름</span>
+                <ul class="sub">
+                  <li>이경민</li>
+                </ul>
+              </li>
+              <li>
+                <span>나이</span>
+                <ul class="sub">
+                  <li>1999년 11월 4일 : 26세</li>
+                </ul>
+              </li>
+              <li>
+                <span>경력</span>
+                <ul class="sub">
+                  <li>법무법인(광장) 사무보조</li>
+                  <li><span>2023.11 ~ 2024.11</span></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="Learning" id="process">
+      <div class="container">
+        <div class="swiper swiper1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="process_txt_area">
+                <div class="process_txt">
+                  <strong>코딩 학습</strong>
+                  <p>HTML, CSS, JS, React 등 다양한 기술을 학습했습니다.</p>
+                </div>
+              </div>
+              <div class="process_img_area">
+                <ul class="process_img">
+                  <li><img src="images/learning1.jpg" alt=""></li>
+                  <li><img src="images/learning2.jpg" alt=""></li>
+                  <li><img src="images/learning3.jpg" alt=""></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Life -->
+    <section class="life" id="life">
+      <div class="container">
+        <div class="title"><span>LIFE</span></div>
+        <ul class="life_area life_img1">
+          <li>
+            <a href="#">
+              <div class="life_imgarea"><img src="images/life1.jpg" alt=""></div>
+              <div class="over">
+                <div class="overcon"><strong>여행</strong><span>잊을 수 없는 순간</span></div>
+              </div>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#">
+              <div class="life_imgarea"><img src="images/life2.jpg" alt=""></div>
+              <div class="over">
+                <div class="overcon"><strong>일상</strong><span>소소한 행복</span></div>
+              </div>
+            </a>
+          </li>
+
+          
+        </ul>
+      </div>
+    </section>
+
+    <!-- Strength -->
+    <section class="strength" id="strength">
+      <div class="container">
+        <div class="title"><span>STRENGTH</span></div>
+        <div class="swiper swiper2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="icon_area">
+                  <img src="images/icon1.png" alt="">
+                  <span>책임감</span>
+                </div>
+                <div class="extra_content">
+                  <div class="extra_text">
+                    <strong>성실한 업무 태도</strong>
+                    <span>항상 최선을 다합니다.</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="ftinner">
+        <hr />
+        <div class="contact_list">
+          <ul>
+            <li><a href="#"><span>Email:</span> lkm4175@naver.com</a></li>
+            <li><a href="#"><span>Phone:</span> 010-4559-4175</a></li>
+            <li><a href="#"><span>GitHub:</span> github.com/yourid</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Top 버튼 -->
+    <div class="top_btn">
+      <a href="#"><img src="images/scroll-up-64.png" alt="Top"></a>
+    </div>
+
+  </div>
+
+  <!-- Swiper & Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="js/about me.js"></script>
+</body>
+</html>
